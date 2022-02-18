@@ -1,17 +1,22 @@
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});New 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', {page:'Home', menuId:'home'});
+const express = router.Router();
+const express = require("express"),
+
+  app = express();
+
+//setting view engine to ejs
+app.set("view engine", "ejs");
+
+//route for index page
+app.get("/", function (req, res) {
+  res.render("index");
 });
-router.get("/", function (req, res, next) {
-res.render("index", { page: "Home", menuId: "home" });
+
+//route for magic page
+app.get("/magic", function (req, res) {
+  res.render("magic");
 });
-router.get("/about", function (req, res, next) {
-res.render("about", { page: "About", menuId: "about" });
+
+app.listen(8080, function () {
+  console.log("Server is running on port 8080 ");
 });
-router.get("/contact", function (req, res, next) {
-res.render("contact", { page: "Contact", menuId: "contact" });
-});
+module.exports = router ;
