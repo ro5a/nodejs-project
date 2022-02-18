@@ -1,22 +1,9 @@
-const express = router.Router();
-const express = require("express"),
+var express = require('express');
+var router = express.Router();
 
-  app = express();
-
-//setting view engine to ejs
-app.set("view engine", "ejs");
-
-//route for index page
-app.get("/", function (req, res) {
-  res.render("index");
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
 });
 
-//route for magic page
-app.get("/magic", function (req, res) {
-  res.render("magic");
-});
-
-app.listen(8080, function () {
-  console.log("Server is running on port 8080 ");
-});
-module.exports = router ;
+module.exports = router;
