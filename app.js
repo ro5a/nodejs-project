@@ -15,6 +15,15 @@ app.get("/detailes", function(req, res){
 
   res.render("detailes"); 
 });
+app.get("/checkout", function(req, res){
+
+  res.render("checkout"); 
+});
+app.get("/steper", function(req, res){
+
+  res.render("steper"); 
+});
+
 app.listen(port, function(){
      console.log("server is running on port" + port);
 });
