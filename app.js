@@ -1,5 +1,5 @@
 var express = require('express');
-var app = express();
+var app     = express();
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
@@ -11,6 +11,7 @@ app.get("/category", function(req, res){
 
   res.render("category"); 
 });
+
 app.get("/detailes", function(req, res){
 
   res.render("detailes"); 
@@ -23,6 +24,11 @@ app.get("/steper", function(req, res){
 
   res.render("steper"); 
 });
+app.get("/products", function(req, res){
+
+  res.render("products"); 
+});
+
 
 app.listen(port, function(){
      console.log("server is running on port" + port);
